@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Home Page
+        </title>
+    </head>
+    
+    <body>
+  
+    
+    <ol>
+        <% for(var i=0; i<users.length; i++) {%>
+            <a href=<%= users[i].username %>><li><%= users[i].username %></li></a>
+        <% } %>
+    </ol>
+    
+    </body>
+ 
+</html>

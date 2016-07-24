@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="UTF-8" />
+        
+        <title>Todo_List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="/images/todo.png"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style1.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/animate-custom.css" />
+         <script src='/javascripts/jquery.js'></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src='/javascripts/bootbox.js'></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Codrops top bar -->
+          
+           
+            <section>				
+                <div id="container_demo" >
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="/signin" autocomplete="on" method="POST" id="login-form"> 
+                                <h1>Login</h1> 
+                                <p> 
+                                    <label for="username" class="uname" data-icon="u" > Email  </label>
+                                    <input id="username" name="username" required="required" type="email" placeholder="mymail@mail.com"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p"> Password </label>
+                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p > 
+									
+									<span class="change_link">
+									Not a member yet ?
+									<a href="#toregister" class="to_register">Join now</a>
+								    </span>
+								</p>
+                                <p class="login button"> 
+                                    <input type="submit" value="Login" /> 
+								</p>
+                                
+                            </form>
+                        </div>
+
+                        <div id="register" class="animate form">
+                            <form  action="/signup" autocomplete="on" method="POST" id="signup-form"> 
+                                <h1> Sign up </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">Username</label>
+                                    <input id="usernamesignup" name="username" required="required" type="text" placeholder="mysuperusername690" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail" data-icon="e" > Email</label>
+                                    <input id="emailsignup" name="email" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Password </label>
+                                    <input id="passwordsignup" name="password" required="required" class="pwd" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                                    <input id="passwordsignup_confirm" name="password_confirm" required="required" class="pwd" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                 <p >  
+									Already a member ?
+									<a href="#tologin" class="to_register"> Go and login </a>
+								</p>
+                                <p class="signin button"> 
+									<input type="submit" value="Sign up"/> 
+								</p>
+                               
+                            </form>
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+        <script>
+       
+        $('#signup-form').submit(function(e){
+        if(($('#passwordsignup').val())!==($('#passwordsignup_confirm').val())){
+         $('.pwd').css('border','1px solid red');
+    bootbox.alert(" Kindly verify your passwords", function() {
+ 
+                    });
+        e.preventDefault();
+      
+        }
+      
+        
+        })
+        var success_message=<%-message %>
+        
+        if(success_message !=" "){
+       bootbox.alert(success_message, function() {
+  
+                    });
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>  
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css"/>
+
+ </head>
+ 
+ <body>
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Admin Panel</h3><span><a href='/logout'>Logout</a></span>
+  </div>
+  <div class="panel-body">
+    <ol id='approve_mess'></ol>
+  </div>
+</div>
+ 
+
+ 
+ </body>
+ <script>
+ var pending_message=<%- data %>
+ for(var i=0;i<pending_message.length;i++){
+ document.getElementById('approve_mess').innerHTML+='<li class="pending_message">&nbsp;<a href=approve/'+pending_message[i]._id +'><i class=" glyphicon glyphicon-ok"></i></a>&nbsp;&nbsp;<a href=delete/'+pending_message[i]._id +'><i class=" glyphicon glyphicon-trash"></i></a>&nbsp;&nbsp;&nbsp;'+pending_message[i].name+" says: "+pending_message[i].message+'</li>';
+ }
+
+ </script>
+ </html>

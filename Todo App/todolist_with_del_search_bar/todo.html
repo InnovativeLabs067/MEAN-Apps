@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo_List</title>
+    <script src="todo.js"></script>
+</head>
+<body>
+<h1>TODO-LIST</h1><hr><br>
+<label>Name&nbsp&nbsp&nbsp&nbsp<input type="text" id="name"> </label><br><br>
+<label>Roll#&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="Roll"> </label><br><br>
+<label>Email&nbsp&nbsp&nbsp&nbsp<input type="email" id="email"> </label><br><br>
+<label>Address&nbsp<input type="text" id="address"> </label><br><br>
+<input type="button" value="Add" onclick="add()"><br><br>
+<label>Enter Roll# you want to delete:<br> <input type="text" id="delete_record"><input type="button" value="Delete" onclick="del()"></label><br><br>
+<table id="output" border="1">
+    <tr>
+        <td>Roll#</td>
+        <td>
+            Name
+        </td>
+        <td>
+            Email
+        </td>
+        <td>
+            Address
+        </td>
+    </tr>
+</table>
+</body>
+</html>
